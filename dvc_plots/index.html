@@ -921,14 +921,11 @@
         "type": "nominal"
     },
     "spec": {
-        "transform": [
-            {
-                "aggregate": [
-                    {
-                        "op": "count",
-                        "as": "xy_count"
-                    }
-                ],
+        "transform": [{
+                "aggregate": [{
+                    "op": "count",
+                    "as": "xy_count"
+                }],
                 "groupby": [
                     "predicted",
                     "actual"
@@ -953,13 +950,11 @@
                 "value": 0
             },
             {
-                "joinaggregate": [
-                    {
-                        "op": "max",
-                        "field": "xy_count",
-                        "as": "max_count"
-                    }
-                ],
+                "joinaggregate": [{
+                    "op": "max",
+                    "field": "xy_count",
+                    "as": "max_count"
+                }],
                 "groupby": []
             },
             {
@@ -981,11 +976,10 @@
                 "title": "Predicted label"
             }
         },
-        "layer": [
-            {
+        "layer": [{
                 "mark": "rect",
-                "width": 300,
-                "height": 300,
+                "width": 200,
+                "height": 200,
                 "encoding": {
                     "color": {
                         "field": "xy_count",
@@ -1016,8 +1010,7 @@
             }
         ]
     }
-}
-;
+};
             vegaEmbed('#plot_reports_cfm_json', spec);
         </script>
     </div>
@@ -1194,10 +1187,9 @@
 ]
     },
     "title": "Precision Recall Curve",
-    "width": 300,
-    "height": 300,
-    "layer": [
-        {
+    "width": 200,
+    "height": 200,
+    "layer": [{
             "encoding": {
                 "x": {
                     "field": "recall",
@@ -1217,8 +1209,7 @@
                     "type": "nominal"
                 }
             },
-            "layer": [
-                {
+            "layer": [{
                     "mark": "line"
                 },
                 {
@@ -1248,15 +1239,12 @@
             ]
         },
         {
-            "transform": [
-                {
-                    "filter": {
-                        "selection": "label"
-                    }
+            "transform": [{
+                "filter": {
+                    "selection": "label"
                 }
-            ],
-            "layer": [
-                {
+            }],
+            "layer": [{
                     "mark": {
                         "type": "rule",
                         "color": "gray"
@@ -1283,28 +1271,25 @@
                             "type": "quantitative"
                         }
                     },
-                    "layer": [
-                        {
-                            "mark": {
-                                "type": "text",
-                                "align": "left",
-                                "dx": 5,
-                                "dy": -5
-                            },
-                            "encoding": {
-                                "color": {
-                                    "type": "nominal",
-                                    "field": "rev"
-                                }
+                    "layer": [{
+                        "mark": {
+                            "type": "text",
+                            "align": "left",
+                            "dx": 5,
+                            "dy": -5
+                        },
+                        "encoding": {
+                            "color": {
+                                "type": "nominal",
+                                "field": "rev"
                             }
                         }
-                    ]
+                    }]
                 }
             ]
         }
     ]
-}
-;
+};
             vegaEmbed('#plot_reports_prc_json', spec);
         </script>
     </div>
@@ -1445,10 +1430,9 @@
 ]
     },
     "title": "ROC Curve",
-    "width": 300,
-    "height": 300,
-    "layer": [
-        {
+    "width": 200,
+    "height": 200,
+    "layer": [{
             "encoding": {
                 "x": {
                     "field": "fpr",
@@ -1468,8 +1452,7 @@
                     "type": "nominal"
                 }
             },
-            "layer": [
-                {
+            "layer": [{
                     "mark": "line"
                 },
                 {
@@ -1499,15 +1482,12 @@
             ]
         },
         {
-            "transform": [
-                {
-                    "filter": {
-                        "selection": "label"
-                    }
+            "transform": [{
+                "filter": {
+                    "selection": "label"
                 }
-            ],
-            "layer": [
-                {
+            }],
+            "layer": [{
                     "mark": {
                         "type": "rule",
                         "color": "gray"
@@ -1534,28 +1514,25 @@
                             "type": "quantitative"
                         }
                     },
-                    "layer": [
-                        {
-                            "mark": {
-                                "type": "text",
-                                "align": "left",
-                                "dx": 5,
-                                "dy": -5
-                            },
-                            "encoding": {
-                                "color": {
-                                    "type": "nominal",
-                                    "field": "rev"
-                                }
+                    "layer": [{
+                        "mark": {
+                            "type": "text",
+                            "align": "left",
+                            "dx": 5,
+                            "dy": -5
+                        },
+                        "encoding": {
+                            "color": {
+                                "type": "nominal",
+                                "field": "rev"
                             }
                         }
-                    ]
+                    }]
                 }
             ]
         }
     ]
-}
-;
+};
             vegaEmbed('#plot_reports_roc_json', spec);
         </script>
     </div>
