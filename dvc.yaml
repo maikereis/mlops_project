@@ -54,14 +54,21 @@ stages:
     plots:
       - reports/prc.json:
           cache: false
+          title: "Precision Recall Curve"
           x: recall
           y: precision
       - reports/roc.json:
           cache: false
+          title: "ROC Curve"
+          x_label: "True negative rate"
+          y_label: "True positive rate"
           x: fpr
           y: tpr
       - reports/cfm.json:
           cache: false
+          title: "Confusion Matrix"
           template: confusion
+          x_label: "True label"
+          y_label: "Predicted label"
           x: actual
           y: predicted
